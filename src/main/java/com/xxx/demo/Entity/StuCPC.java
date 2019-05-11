@@ -10,52 +10,52 @@ public class StuCPC {
     @Column(name="id")
     int id;
 
-    @Column
+    @Column(name="stu_id")
     int stuID;
 
-    @Column
+    @Column(name="is_ccyl")
     boolean isCCYL;
 
-    @Column(name="CCYL_join_Data")
+    @Column(name="ccyl_join_date")
     Date CCYLJoinDate;
 
-    @Column(name="requisition_Submitted")
+    @Column(name="requisition_submitted")
     boolean requisitionSubmitted;
 
-    @Column(name="requisition_Submit_Date")
+    @Column(name="requisition_submit_date")
     Date requisitionSubmitDate;
 
-    @Column(name="intermediate_Party_School")
+    @Column(name="intermediate_party_school")
     boolean intermediatePartySchool;
 
-    @Column(name="intermediate_Party_School_Date")
+    @Column(name="intermediate_party_school_date")
     Date intermediatePartySchoolDate;
 
-    @Column(name="intermediate_Party_School_Lead")
+    @Column(name="intermediate_party_school_lead")
     int intermediatePartySchoolLead;
 
-    @Column(name="intermediate_Party_School_Score")
+    @Column(name="intermediate_party_school_score")
     double intermediatePartySchoolScore;
 
-    @Column(name="senior_Party_School")
+    @Column(name="senior_party_school")
     boolean seniorPartySchool;
 
-    @Column(name="senior_Party_School_Requisition_Submit_Date")
+    @Column(name="senior_party_school_requisition_submit_date")
     Date seniorPartySchoolRequisitionSubmitDate;
 
-    @Column(name="senior_Party_School_Date")
+    @Column(name="senior_party_school_date")
     Date seniorPartySchoolDate;
 
-    @Column(name="senior_Party_School_Score")
+    @Column(name="senior_party_school_score")
     double seniorPartySchoolScore;
 
-    @Column(name="senior_Party_School_No")
+    @Column(name="senior_party_school_no")
     int seniorPartySchoolNo;
 
-    @Column(name="have_Join")
+    @Column(name="have_join")
     boolean haveJoin;
 
-    @Column(name="join_Date")
+    @Column(name="join_date")
     Date joinDate;
 
     @Column

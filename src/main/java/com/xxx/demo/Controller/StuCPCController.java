@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+import java.text.SimpleDateFormat;
+
 import static com.xxx.demo.Common.ResultGenerator.genFailResult;
 import static com.xxx.demo.Common.ResultGenerator.genSuccessResult;
 
@@ -19,9 +21,16 @@ public class StuCPCController {
     StuCPCService stucpcService;
 
     @PostMapping("/api/stucpc/createStuCPC")
-    public Response createStuCPC(@RequestParam int stuID, @RequestParam boolean isCCYL, @RequestParam Date CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam Date requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam Date intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam Date seniorPartySchoolRequisitionSubmitDate,@RequestParam Date seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam Date joinDate,@RequestParam String condition){
+    public Response createStuCPC(@RequestParam int stuID, @RequestParam boolean isCCYL, @RequestParam String CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam String requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam String intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam String seniorPartySchoolRequisitionSubmitDate,@RequestParam String seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam String joinDate,@RequestParam String condition){
         try{
-            stucpcService.createStuCPC(stuID, isCCYL,CCYLJoinDate,requisitionSubmitted,requisitionSubmitDate,intermediatePartySchool,intermediatePartySchoolDate,intermediatePartySchoolLead,intermediatePartySchoolScore,seniorPartySchool,seniorPartySchoolRequisitionSubmitDate,seniorPartySchoolDate,seniorPartySchoolScore,seniorPartySchoolNo,haveJoin,joinDate,condition);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date d1=format.parse(CCYLJoinDate);
+            Date d2=format.parse(requisitionSubmitDate);
+            Date d3=format.parse(intermediatePartySchoolDate);
+            Date d4=format.parse(seniorPartySchoolRequisitionSubmitDate);
+            Date d5=format.parse(seniorPartySchoolDate);
+            Date d6=format.parse(joinDate);
+            stucpcService.createStuCPC(stuID, isCCYL,d1,requisitionSubmitted,d2,intermediatePartySchool,d3,intermediatePartySchoolLead,intermediatePartySchoolScore,seniorPartySchool,d4,d5,seniorPartySchoolScore,seniorPartySchoolNo,haveJoin,d6,condition);
             return genSuccessResult(true);
         }catch (Exception e){
             return genFailResult("添加失败");
@@ -29,9 +38,16 @@ public class StuCPCController {
     }
 
     @PostMapping("/api/stucpc/updateStuCPC")
-    public Response updateStuCPC(@RequestParam int id,@RequestParam int stuID, @RequestParam boolean isCCYL, @RequestParam Date CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam Date requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam Date intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam Date seniorPartySchoolRequisitionSubmitDate,@RequestParam Date seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam Date joinDate,@RequestParam String condition){
+    public Response updateStuCPC(@RequestParam int id,@RequestParam int stuID, @RequestParam boolean isCCYL, @RequestParam String CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam String requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam String intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam String seniorPartySchoolRequisitionSubmitDate,@RequestParam String seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam String joinDate,@RequestParam String condition){
         try{
-            stucpcService.updateStuCPC(id,stuID, isCCYL,CCYLJoinDate,requisitionSubmitted,requisitionSubmitDate,intermediatePartySchool,intermediatePartySchoolDate,intermediatePartySchoolLead,intermediatePartySchoolScore,seniorPartySchool,seniorPartySchoolRequisitionSubmitDate,seniorPartySchoolDate,seniorPartySchoolScore,seniorPartySchoolNo,haveJoin,joinDate,condition);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date d1=format.parse(CCYLJoinDate);
+            Date d2=format.parse(requisitionSubmitDate);
+            Date d3=format.parse(intermediatePartySchoolDate);
+            Date d4=format.parse(seniorPartySchoolRequisitionSubmitDate);
+            Date d5=format.parse(seniorPartySchoolDate);
+            Date d6=format.parse(joinDate);
+            stucpcService.updateStuCPC(id,stuID, isCCYL,d1,requisitionSubmitted,d2,intermediatePartySchool,d3,intermediatePartySchoolLead,intermediatePartySchoolScore,seniorPartySchool,d4,d5,seniorPartySchoolScore,seniorPartySchoolNo,haveJoin,d6,condition);
             return genSuccessResult(true);
         }catch (Exception e){
             return genFailResult("更新失败");
