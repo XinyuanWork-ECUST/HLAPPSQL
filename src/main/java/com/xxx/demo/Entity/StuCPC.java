@@ -1,6 +1,7 @@
 package com.xxx.demo.Entity;
 
 import javax.persistence.*;
+import javax.print.attribute.standard.MediaSize;
 import java.util.Date;
 
 @Entity(name = "stucpc")
@@ -10,60 +11,60 @@ public class StuCPC {
     @Column(name="id")
     int id;
 
-    @Column(name="stu_id")
+    @Column(name = "stu_id")
     String stuID;
 
-    @Column(name="is_ccyl")
+    @Column(name ="is_ccyl")
     boolean isCCYL;
 
-    @Column(name="ccyl_join_date")
+    @Column(name = "ccyl_join_date")
     Date CCYLJoinDate;
 
-    @Column(name="requisition_submitted")
+    @Column(name = "requisition_submitted")
     boolean requisitionSubmitted;
 
-    @Column(name="requisition_submit_date")
+    @Column(name = "requisition_submit_date")
     Date requisitionSubmitDate;
 
-    @Column(name="intermediate_party_school")
+    @Column(name = "intermediate_party_school")
     boolean intermediatePartySchool;
 
-    @Column(name="intermediate_party_school_date")
+    @Column(name = "intermediate_partyschool_date")
     Date intermediatePartySchoolDate;
 
-    @Column(name="intermediate_party_school_lead")
-    int intermediatePartySchoolLead;
+    @Column(name = "intermediate_party_school_lead")
+    String intermediatePartySchoolLead;
 
-    @Column(name="intermediate_party_school_score")
+    @Column(name = "intermediate_party_school_score")
     double intermediatePartySchoolScore;
 
-    @Column(name="senior_party_school")
+    @Column(name = "senior_party_school")
     boolean seniorPartySchool;
 
-    @Column(name="senior_party_school_requisition_submit_date")
+    @Column(name = "senior_party_school_requisition_submit_date")
     Date seniorPartySchoolRequisitionSubmitDate;
 
-    @Column(name="senior_party_school_date")
+    @Column(name = "senior_party_school_date")
     Date seniorPartySchoolDate;
 
-    @Column(name="senior_party_school_score")
+    @Column(name = "senior_party_school_score")
     double seniorPartySchoolScore;
 
-    @Column(name="senior_party_school_no")
+    @Column(name = "senior_party_school_no")
     int seniorPartySchoolNo;
 
-    @Column(name="have_join")
+    @Column(name = "have_join")
     boolean haveJoin;
 
-    @Column(name="join_date")
+    @Column(name = "join_date")
     Date joinDate;
 
-    @Column
+    @Column(name = "stucpc_condition")
     String condition;
 
     public StuCPC(){}
 
-    public StuCPC(String stuID, boolean isCCYL, Date CCYLJoinDate, boolean requisitionSubmitted, Date requisitionSubmitDate, boolean intermediatePartySchool, Date intermediatePartySchoolDate, int intermediatePartySchoolLead, double intermediatePartySchoolScore, boolean seniorPartySchool, Date seniorPartySchoolRequisitionSubmitDate, Date seniorPartySchoolDate, double seniorPartySchoolScore, int seniorPartySchoolNo, boolean haveJoin, Date joinDate, String condition) {
+    public StuCPC(String stuID, boolean isCCYL, Date CCYLJoinDate, boolean requisitionSubmitted, Date requisitionSubmitDate, boolean intermediatePartySchool, Date intermediatePartySchoolDate, String intermediatePartySchoolLead, double intermediatePartySchoolScore, boolean seniorPartySchool, Date seniorPartySchoolRequisitionSubmitDate, Date seniorPartySchoolDate, double seniorPartySchoolScore, int seniorPartySchoolNo, boolean haveJoin, Date joinDate, String condition) {
         this.stuID = stuID;
         this.isCCYL = isCCYL;
         this.CCYLJoinDate = CCYLJoinDate;
@@ -147,11 +148,11 @@ public class StuCPC {
         this.intermediatePartySchoolDate = intermediatePartySchoolDate;
     }
 
-    public int getIntermediatePartySchoolLead() {
+    public String getIntermediatePartySchoolLead() {
         return intermediatePartySchoolLead;
     }
 
-    public void setIntermediatePartySchoolLead(int intermediatePartySchoolLead) {
+    public void setIntermediatePartySchoolLead(String intermediatePartySchoolLead) {
         this.intermediatePartySchoolLead = intermediatePartySchoolLead;
     }
 
@@ -227,5 +228,3 @@ public class StuCPC {
         this.condition = condition;
     }
 }
-
-
