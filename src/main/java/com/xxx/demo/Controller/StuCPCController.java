@@ -21,7 +21,7 @@ public class StuCPCController {
     StuCPCService stucpcService;
 
     @PostMapping("/api/stucpc/createStuCPC")
-    public Response createStuCPC(@RequestParam int stuID, @RequestParam boolean isCCYL, @RequestParam String CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam String requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam String intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam String seniorPartySchoolRequisitionSubmitDate,@RequestParam String seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam String joinDate,@RequestParam String condition){
+    public Response createStuCPC(@RequestParam String stuID, @RequestParam boolean isCCYL, @RequestParam String CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam String requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam String intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam String seniorPartySchoolRequisitionSubmitDate,@RequestParam String seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam String joinDate,@RequestParam String condition){
         try{
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date d1=format.parse(CCYLJoinDate);
@@ -38,7 +38,7 @@ public class StuCPCController {
     }
 
     @PostMapping("/api/stucpc/updateStuCPC")
-    public Response updateStuCPC(@RequestParam int id,@RequestParam int stuID, @RequestParam boolean isCCYL, @RequestParam String CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam String requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam String intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam String seniorPartySchoolRequisitionSubmitDate,@RequestParam String seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam String joinDate,@RequestParam String condition){
+    public Response updateStuCPC(@RequestParam int id,@RequestParam String stuID, @RequestParam boolean isCCYL, @RequestParam String CCYLJoinDate, @RequestParam boolean requisitionSubmitted, @RequestParam String requisitionSubmitDate,@RequestParam boolean intermediatePartySchool,@RequestParam String intermediatePartySchoolDate,@RequestParam int intermediatePartySchoolLead,@RequestParam double intermediatePartySchoolScore,@RequestParam boolean seniorPartySchool,@RequestParam String seniorPartySchoolRequisitionSubmitDate,@RequestParam String seniorPartySchoolDate,@RequestParam double seniorPartySchoolScore,@RequestParam int seniorPartySchoolNo,@RequestParam boolean haveJoin,@RequestParam String joinDate,@RequestParam String condition){
         try{
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date d1=format.parse(CCYLJoinDate);
@@ -55,7 +55,7 @@ public class StuCPCController {
     }
 
     @GetMapping("/api/stucpc/getStuCPCByStuID")
-    public Response getStuCPCByStuID(@RequestParam int StuID){
+    public Response getStuCPCByStuID(@RequestParam String StuID){
         StuCPC thisStuCPC=stucpcService.getStuCPCByStuID(StuID);
         if(thisStuCPC==null){
             return genFailResult("获取失败");

@@ -13,7 +13,7 @@ public class StuCPCService {
     @Autowired
     StuCPCRepository stucpcRepository;
 
-    public boolean createStuCPC(int stuID,boolean isCCYL,Date CCYLJoinDate,boolean requisitionSubmitted,Date requisitionSubmitDate,boolean intermediatePartySchool,Date intermediatePartySchoolDate,int intermediatePartySchoolLead,double intermediatePartySchoolScore,boolean seniorPartySchool,Date seniorPartySchoolRequisitionSubmitDate,Date seniorPartySchoolDate,double seniorPartySchoolScore,int seniorPartySchoolNo,boolean haveJoin,Date joinDate,String condition){
+    public boolean createStuCPC(String stuID,boolean isCCYL,Date CCYLJoinDate,boolean requisitionSubmitted,Date requisitionSubmitDate,boolean intermediatePartySchool,Date intermediatePartySchoolDate,int intermediatePartySchoolLead,double intermediatePartySchoolScore,boolean seniorPartySchool,Date seniorPartySchoolRequisitionSubmitDate,Date seniorPartySchoolDate,double seniorPartySchoolScore,int seniorPartySchoolNo,boolean haveJoin,Date joinDate,String condition){
         try{
             stucpcRepository.createStuCPC(stuID,isCCYL,CCYLJoinDate,requisitionSubmitted,requisitionSubmitDate,intermediatePartySchool,intermediatePartySchoolDate,intermediatePartySchoolLead,intermediatePartySchoolScore,seniorPartySchool,seniorPartySchoolRequisitionSubmitDate,seniorPartySchoolDate,seniorPartySchoolScore,seniorPartySchoolNo,haveJoin,joinDate,condition);
             return true;
@@ -22,7 +22,7 @@ public class StuCPCService {
         }
     }
 
-    public StuCPC getStuCPCByStuID(int StuID){
+    public StuCPC getStuCPCByStuID(String StuID){
         StuCPC stucpc=stucpcRepository.getStuCPCByStuID(StuID);
         return stucpc;
     }
@@ -32,7 +32,7 @@ public class StuCPCService {
         return list;
     }
 
-    public void updateStuCPC(int id,int stuID,boolean isCCYL,Date CCYLJoinDate, boolean requisitionSubmitted,Date requisitionSubmitDate,boolean intermediatePartySchool,Date intermediatePartySchoolDate,int intermediatePartySchoolLead,double intermediatePartySchoolScore,boolean seniorPartySchool,Date seniorPartySchoolRequisitionSubmitDate,Date seniorPartySchoolDate,double seniorPartySchoolScore,int seniorPartySchoolNo,boolean haveJoin,Date joinDate,String condition){
+    public void updateStuCPC(int id,String stuID,boolean isCCYL,Date CCYLJoinDate, boolean requisitionSubmitted,Date requisitionSubmitDate,boolean intermediatePartySchool,Date intermediatePartySchoolDate,int intermediatePartySchoolLead,double intermediatePartySchoolScore,boolean seniorPartySchool,Date seniorPartySchoolRequisitionSubmitDate,Date seniorPartySchoolDate,double seniorPartySchoolScore,int seniorPartySchoolNo,boolean haveJoin,Date joinDate,String condition){
         stucpcRepository.updateStuCPC(id,stuID,isCCYL,CCYLJoinDate,requisitionSubmitted,requisitionSubmitDate,intermediatePartySchool,intermediatePartySchoolDate,intermediatePartySchoolLead,intermediatePartySchoolScore,seniorPartySchool,seniorPartySchoolRequisitionSubmitDate,seniorPartySchoolDate,seniorPartySchoolScore,seniorPartySchoolNo,haveJoin,joinDate,condition);
 
     }
