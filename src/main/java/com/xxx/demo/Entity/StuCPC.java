@@ -58,7 +58,7 @@ public class StuCPC {
     @Column(name="join_date")
     Date joinDate;
 
-    @Column
+    @Column(name = "stucpc_condition")
     String condition;
 
     public StuCPC(){}
