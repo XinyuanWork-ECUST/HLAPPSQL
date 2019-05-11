@@ -1,6 +1,7 @@
 package com.xxx.demo.Entity;
 
 import javax.persistence.*;
+import javax.print.attribute.standard.MediaSize;
 import java.util.Date;
 
 @Entity(name = "stucpc")
@@ -10,100 +11,77 @@ public class StuCPC {
     @Column(name="id")
     int id;
 
-    @Column(name="stu_id")
-    int stuID;
+    @Column(name = "stu_id")
+    String stuID;
 
-    @Column(name="is_ccyl")
+    @Column(name ="is_ccyl")
     boolean isCCYL;
 
-    @Column(name="ccyl_join_date")
+    @Column(name = "ccyl_join_date")
     Date CCYLJoinDate;
 
-    @Column(name="requisition_submitted")
+    @Column(name = "requisition_submitted")
     boolean requisitionSubmitted;
 
-    @Column(name="requisition_submit_date")
+    @Column(name = "requisition_submit_date")
     Date requisitionSubmitDate;
 
-    @Column(name="intermediate_party_school")
+    @Column(name = "intermediate_party_school")
     boolean intermediatePartySchool;
 
-    @Column(name="intermediate_party_school_date")
+    @Column(name = "intermediate_partyschool_date")
     Date intermediatePartySchoolDate;
 
-    @Column(name="intermediate_party_school_lead")
-    int intermediatePartySchoolLead;
+    @Column(name = "intermediate_party_school_lead")
+    String intermediatePartySchoolLead;
 
-    @Column(name="intermediate_party_school_score")
+    @Column(name = "intermediate_party_school_score")
     double intermediatePartySchoolScore;
 
-    @Column(name="senior_party_school")
+    @Column(name = "senior_party_school")
     boolean seniorPartySchool;
 
-    @Column(name="senior_party_school_requisition_submit_date")
+    @Column(name = "senior_party_school_requisition_submit_date")
     Date seniorPartySchoolRequisitionSubmitDate;
 
-    @Column(name="senior_party_school_date")
+    @Column(name = "senior_party_school_date")
     Date seniorPartySchoolDate;
 
-    @Column(name="senior_party_school_score")
+    @Column(name = "senior_party_school_score")
     double seniorPartySchoolScore;
 
-    @Column(name="senior_party_school_no")
+    @Column(name = "senior_party_school_no")
     int seniorPartySchoolNo;
 
-    @Column(name="have_join")
+    @Column(name = "have_join")
     boolean haveJoin;
 
-    @Column(name="join_date")
+    @Column(name = "join_date")
     Date joinDate;
 
     @Column(name = "stucpc_condition")
     String condition;
 
     public StuCPC(){}
-    public StuCPC(int stuID,boolean isCCYL,Date CCYLJoinDate,boolean requisitionSubmitted,Date requisitionSubmitDate,boolean intermediatePartySchool,Date intermediatePartySchoolDate,int intermediatePartySchoolLead,double intermediatePartySchoolScore,boolean seniorPartySchool,Date seniorPartySchoolRequisitionSubmitDate,Date seniorPartySchoolDate,double seniorPartySchoolScore,int seniorPartySchoolNo,boolean haveJoin,Date joinDate,String condition) {
-        this.stuID =stuID ;
-        this.isCCYL=isCCYL;
-        this.CCYLJoinDate=CCYLJoinDate;
-        this.requisitionSubmitted=requisitionSubmitted;
-        this.requisitionSubmitDate=requisitionSubmitDate;
-        this.intermediatePartySchool=intermediatePartySchool;
-        this.intermediatePartySchoolDate=intermediatePartySchoolDate;
-        this.intermediatePartySchoolLead=intermediatePartySchoolLead;
-        this.intermediatePartySchoolScore=intermediatePartySchoolScore;
-        this.seniorPartySchool=seniorPartySchool;
-        this.seniorPartySchoolRequisitionSubmitDate=seniorPartySchoolRequisitionSubmitDate;
-        this.seniorPartySchoolDate=seniorPartySchoolDate;
-        this.seniorPartySchoolScore=seniorPartySchoolScore;
-        this.seniorPartySchoolNo=seniorPartySchoolNo;
-        this.haveJoin=haveJoin;
-        this.joinDate=joinDate;
-        this.condition=condition;
-    }
 
-    @Override
-    public String toString() {
-        return "StuCPC{" +
-                "id=" + id +
-                ", stuID='" + stuID + '\'' +
-                ", isCCYL='" + isCCYL + '\'' +
-                ", CCYLJoinDate='" + CCYLJoinDate + '\'' +
-                ", requisitionSubmitted='"+ requisitionSubmitted +'\''+
-                ", requisitionSubmitDate='"+ requisitionSubmitDate +'\''+
-                ", intermediatePartySchool='"+ intermediatePartySchool +'\''+
-                ", intermediatePartySchoolDate='"+ intermediatePartySchoolDate +'\''+
-                ", intermediatePartySchoolLead='"+ intermediatePartySchoolLead +'\''+
-                ", intermediatePartySchoolScore='"+ intermediatePartySchoolScore +'\''+
-                ", seniorPartySchool='"+ seniorPartySchool +'\''+
-                ", seniorPartySchoolRequisitionSubmitDate='"+ seniorPartySchoolRequisitionSubmitDate +'\''+
-                ", seniorPartySchoolDate:Date='"+ seniorPartySchoolDate +'\''+
-                ", seniorPartySchoolScore='"+ seniorPartySchoolScore +'\''+
-                ", seniorPartySchoolNo='"+ seniorPartySchoolNo +'\''+
-                ", haveJoin='"+ haveJoin +'\''+
-                ", joinData='"+ joinDate +'\''+
-                ", condition='"+ condition +'\''+
-                '}';
+    public StuCPC(String stuID, boolean isCCYL, Date CCYLJoinDate, boolean requisitionSubmitted, Date requisitionSubmitDate, boolean intermediatePartySchool, Date intermediatePartySchoolDate, String intermediatePartySchoolLead, double intermediatePartySchoolScore, boolean seniorPartySchool, Date seniorPartySchoolRequisitionSubmitDate, Date seniorPartySchoolDate, double seniorPartySchoolScore, int seniorPartySchoolNo, boolean haveJoin, Date joinDate, String condition) {
+        this.stuID = stuID;
+        this.isCCYL = isCCYL;
+        this.CCYLJoinDate = CCYLJoinDate;
+        this.requisitionSubmitted = requisitionSubmitted;
+        this.requisitionSubmitDate = requisitionSubmitDate;
+        this.intermediatePartySchool = intermediatePartySchool;
+        this.intermediatePartySchoolDate = intermediatePartySchoolDate;
+        this.intermediatePartySchoolLead = intermediatePartySchoolLead;
+        this.intermediatePartySchoolScore = intermediatePartySchoolScore;
+        this.seniorPartySchool = seniorPartySchool;
+        this.seniorPartySchoolRequisitionSubmitDate = seniorPartySchoolRequisitionSubmitDate;
+        this.seniorPartySchoolDate = seniorPartySchoolDate;
+        this.seniorPartySchoolScore = seniorPartySchoolScore;
+        this.seniorPartySchoolNo = seniorPartySchoolNo;
+        this.haveJoin = haveJoin;
+        this.joinDate = joinDate;
+        this.condition = condition;
     }
 
     public int getId() {
@@ -114,70 +92,139 @@ public class StuCPC {
         this.id = id;
     }
 
-    public int getStuID() {return stuID;}
+    public String getStuID() {
+        return stuID;
+    }
 
-    public void setStuID(int stuID) {this.stuID=stuID;}
+    public void setStuID(String stuID) {
+        this.stuID = stuID;
+    }
 
-    public boolean getIsCCYL() {return isCCYL;}
+    public boolean isCCYL() {
+        return isCCYL;
+    }
 
-    public void setIsCCYL(boolean isCCYL) {this.isCCYL=isCCYL;}
+    public void setCCYL(boolean CCYL) {
+        isCCYL = CCYL;
+    }
 
-    public Date getCCYLJoinDate() {return CCYLJoinDate;}
+    public Date getCCYLJoinDate() {
+        return CCYLJoinDate;
+    }
 
-    public void setCCYLJoinDate(Date CCYLJoinDate)  {this.CCYLJoinDate=CCYLJoinDate;}
+    public void setCCYLJoinDate(Date CCYLJoinDate) {
+        this.CCYLJoinDate = CCYLJoinDate;
+    }
 
-    public boolean getRequisitionSubmitted() {return requisitionSubmitted;}
+    public boolean isRequisitionSubmitted() {
+        return requisitionSubmitted;
+    }
 
-    public void setRequisitionSubmitted(boolean requisitionSubmitted) {this.requisitionSubmitted=requisitionSubmitted;}
+    public void setRequisitionSubmitted(boolean requisitionSubmitted) {
+        this.requisitionSubmitted = requisitionSubmitted;
+    }
 
-    public Date getRequisitionSubmitDate() {return requisitionSubmitDate;}
+    public Date getRequisitionSubmitDate() {
+        return requisitionSubmitDate;
+    }
 
-    public void setRequisitionSubmitDate(Date requisitionSubmitDate) {this.requisitionSubmitDate=requisitionSubmitDate;}
+    public void setRequisitionSubmitDate(Date requisitionSubmitDate) {
+        this.requisitionSubmitDate = requisitionSubmitDate;
+    }
 
-    public boolean getIntermediatePartySchool() {return intermediatePartySchool;}
+    public boolean isIntermediatePartySchool() {
+        return intermediatePartySchool;
+    }
 
-    public void setIntermediatePartySchool(boolean intermediatePartySchool) {this.intermediatePartySchool=intermediatePartySchool;}
+    public void setIntermediatePartySchool(boolean intermediatePartySchool) {
+        this.intermediatePartySchool = intermediatePartySchool;
+    }
 
-    public Date getIntermediatePartySchoolDate() {return intermediatePartySchoolDate;}
+    public Date getIntermediatePartySchoolDate() {
+        return intermediatePartySchoolDate;
+    }
 
-    public void setIntermediatePartySchoolDate(Date intermediatePartySchoolDate) {this.intermediatePartySchoolDate=intermediatePartySchoolDate;}
+    public void setIntermediatePartySchoolDate(Date intermediatePartySchoolDate) {
+        this.intermediatePartySchoolDate = intermediatePartySchoolDate;
+    }
 
-    public int getIntermediatePartySchoolLead() {return intermediatePartySchoolLead;}
+    public String getIntermediatePartySchoolLead() {
+        return intermediatePartySchoolLead;
+    }
 
-    public void setIntermediatePartySchoolLead(int intermediatePartySchoolLead)  {this.intermediatePartySchoolLead=intermediatePartySchoolLead;}
+    public void setIntermediatePartySchoolLead(String intermediatePartySchoolLead) {
+        this.intermediatePartySchoolLead = intermediatePartySchoolLead;
+    }
 
-    public double getIntermediatePartySchoolScore()  {return intermediatePartySchoolScore;}
+    public double getIntermediatePartySchoolScore() {
+        return intermediatePartySchoolScore;
+    }
 
-    public void setIntermediatePartySchoolScore(double intermediatePartySchoolScore)  {this.intermediatePartySchoolScore=intermediatePartySchoolScore;}
+    public void setIntermediatePartySchoolScore(double intermediatePartySchoolScore) {
+        this.intermediatePartySchoolScore = intermediatePartySchoolScore;
+    }
 
-    public boolean getSeniorPartySchool() {return seniorPartySchool;}
+    public boolean isSeniorPartySchool() {
+        return seniorPartySchool;
+    }
 
-    public void setSeniorPartySchool(boolean seniorPartySchool) {this.seniorPartySchool=seniorPartySchool;}
+    public void setSeniorPartySchool(boolean seniorPartySchool) {
+        this.seniorPartySchool = seniorPartySchool;
+    }
 
-    public Date getSeniorPartySchoolRequisitionSubmitDate() {return seniorPartySchoolRequisitionSubmitDate;}
+    public Date getSeniorPartySchoolRequisitionSubmitDate() {
+        return seniorPartySchoolRequisitionSubmitDate;
+    }
 
-    public void setSeniorPartySchoolRequisitionSubmitDate(Date seniorPartySchoolRequisitionSubmitDate)  {this.seniorPartySchoolRequisitionSubmitDate=seniorPartySchoolRequisitionSubmitDate;}
+    public void setSeniorPartySchoolRequisitionSubmitDate(Date seniorPartySchoolRequisitionSubmitDate) {
+        this.seniorPartySchoolRequisitionSubmitDate = seniorPartySchoolRequisitionSubmitDate;
+    }
 
-    public double getSeniorPartySchoolScore() {return seniorPartySchoolScore;}
+    public Date getSeniorPartySchoolDate() {
+        return seniorPartySchoolDate;
+    }
 
-    public void setSeniorPartySchoolScore(double seniorPartySchoolScore)  {this.seniorPartySchoolScore=seniorPartySchoolScore;}
+    public void setSeniorPartySchoolDate(Date seniorPartySchoolDate) {
+        this.seniorPartySchoolDate = seniorPartySchoolDate;
+    }
 
-    public int getSeniorPartySchoolNo() {return seniorPartySchoolNo;}
+    public double getSeniorPartySchoolScore() {
+        return seniorPartySchoolScore;
+    }
 
-    public void setSeniorPartySchoolNo(int seniorPartySchoolNo) {this.seniorPartySchoolNo=seniorPartySchoolNo;}
+    public void setSeniorPartySchoolScore(double seniorPartySchoolScore) {
+        this.seniorPartySchoolScore = seniorPartySchoolScore;
+    }
 
-    public boolean getHaveJoin()  {return haveJoin;}
+    public int getSeniorPartySchoolNo() {
+        return seniorPartySchoolNo;
+    }
 
-    public void setHaveJoin(boolean haveJoin) {this.haveJoin=haveJoin;}
+    public void setSeniorPartySchoolNo(int seniorPartySchoolNo) {
+        this.seniorPartySchoolNo = seniorPartySchoolNo;
+    }
 
-    public Date getJoinDate() {return joinDate;}
+    public boolean isHaveJoin() {
+        return haveJoin;
+    }
 
-    public void setJoinDate(Date joinDate)  {this.joinDate=joinDate;}
+    public void setHaveJoin(boolean haveJoin) {
+        this.haveJoin = haveJoin;
+    }
 
-    public String getCondition() {return condition;}
+    public Date getJoinDate() {
+        return joinDate;
+    }
 
-    public void setCondition(String condition) {this.condition=condition;}
+    public void setJoinDate(Date joinDate) {
+        this.joinDate = joinDate;
+    }
 
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
 }
-
-
