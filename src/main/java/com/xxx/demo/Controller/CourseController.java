@@ -67,7 +67,7 @@ public class CourseController {
         }
     }
 
-    @PostMapping("/api/Course/deleteSomeCourse")
+    @PostMapping("/api/course/deleteSomeCourse")
     public Response deleteSomeCourse(@RequestParam(value = "id[]") int []id){
         try{
             courseService.deleteSomeCourse(id);
